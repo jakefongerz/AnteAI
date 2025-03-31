@@ -1,8 +1,9 @@
 # AnteAI
 ## Running the program
 * Install the dependencies: `pip install dotenv` and `pip install openai`
-* Create a `.env` file in the root directory and add your OpenAI API key: `OPENAI_API_KEY=<your_openai_api_key>`
-* Run the program: `python src/lesson1.py`
+* Create a `.env` file in the root directory
+    * Add your OpenAI API key: `OPENAI_API_KEY="<your_openai_api_key>"`
+* Run the program: `python src/main.py`
 
 ## 项目简介
 * AnteAI is an AI tutor that can help you learn to play Poker.

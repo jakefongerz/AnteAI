@@ -343,7 +343,8 @@ def postLessonActivity(user_name):
         input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
 
 # lesson 1: 扑克牌的基本知识
-def start(user_name):
+def start(user_data):
+    user_name = user_data["name"]
     print(f"{YELLOW}"+"="*50)
     t.sleep(1)
     print(f"{GREEN}Hey {user_name}! In this lesson, we will learn the basic knowledge of poker.")
