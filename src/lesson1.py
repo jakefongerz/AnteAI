@@ -27,6 +27,8 @@ NEGATIVE = "\033[7m"
 CROSSED = "\033[9m"
 RESET = "\033[0m"
 
+# https://pokerpower.com/how-to-play-texas-hold-em/
+
 def card_refresher(user_name):
     print("="*50)
     print("STANDARD DECK OF CARDS")
