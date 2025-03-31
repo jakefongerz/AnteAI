@@ -110,6 +110,7 @@ def hand_rankings(user_name):
     t.sleep(2)
     print(f"The poker hand is ranked from high to low:{YELLOW} Royal Flush, {GREEN}Straight Flush, {BLUE}Four of a Kind, {PURPLE}Full House, {CYAN}Flush, {LIGHT_GREEN}Straight, {LIGHT_BLUE}Three of a Kind, {LIGHT_PURPLE}Two Pair, {LIGHT_RED}One Pair, {RED}High Card.{RESET}")
     t.sleep(3)
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     print(f"{YELLOW}Royal Flush{RESET} is the {BOLD}highest{RESET} hand in poker.")
     t.sleep(2)
     print(f"A Royal Flush is a straight from a ten to an ace and all five cards are of the same suit")
@@ -152,6 +153,8 @@ def hand_rankings(user_name):
     t.sleep(2)
     print("These are the possibilities for poker hands.")
     t.sleep(2)
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
+    t.sleep(2)
     print("Any hand of a certain category is stronger than any hand in a lower category.") 
     t.sleep(2)
     print("For example, any full house beats any straight.")
@@ -183,6 +186,8 @@ def objectives_of_poker(user_name):
     t.sleep(2)
     print(f"\t 2. By getting your opponents to fold before they are able to show their cards.{RESET}")
     t.sleep(2)
+    print(f"Players make their {BOLD}five-card hands{RESET} by using their two hole cards and the five community cards.")
+    t.sleep(2)
     user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET})").lower()
     t.sleep(1)
     if user_input == "y":
@@ -213,7 +218,7 @@ def structure_of_texas_hold_em(user_name):
     t.sleep(2)
     print(f"{CYAN}These forced bets create action and ensure there are chips to play for!{RESET}")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # Pre-Flop
     print(f"\n{YELLOW}Pre-Flop:{RESET} The first betting round begins!")
     t.sleep(2)
@@ -234,7 +239,7 @@ def structure_of_texas_hold_em(user_name):
     t.sleep(2)
     print(f"If everyone but one player folds, that player wins the pot immediately!")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # Flop
     print(f"\n{YELLOW}Flop:{RESET} Three community cards are dealt face-up.")
     t.sleep(2)
@@ -253,7 +258,7 @@ def structure_of_texas_hold_em(user_name):
     t.sleep(2)
     print(f"If all players check or match the last bet, we move to the next round!")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # Turn
     print(f"\n{YELLOW}Turn:{RESET} A fourth community card is dealt face-up.")
     t.sleep(2)
@@ -261,13 +266,13 @@ def structure_of_texas_hold_em(user_name):
     t.sleep(2)
     print(f"Players still in the hand decide whether to check, bet, call, raise, or fold.")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # River
     print(f"\n{YELLOW}River:{RESET} The fifth and final community card is dealt.")
     t.sleep(2)
     print(f"This is the last chance for players to bet or bluff before the showdown!")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # Showdown
     print(f"\n{YELLOW}Showdown:{RESET} If multiple players are still in the hand, they reveal their cards.")
     t.sleep(2)
@@ -275,7 +280,7 @@ def structure_of_texas_hold_em(user_name):
     t.sleep(2)
     print(f"If there's a tie, the pot is split among the winners.")
     t.sleep(2)
-
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     print(f"{LIGHT_GREEN}And that's a complete hand of Texas Hold'em!{RESET}")
     t.sleep(2)
 
@@ -316,6 +321,26 @@ def game_flow_questions(user_name):
     t.sleep(2)
     input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
 
+def postLessonActivity(user_name):
+    questions = [
+    "At the showdown, two players reveal their hands: Player A has 2-4-8-7-10 all clubs, and Player B has 3-3-9-9-9 of different suits. Who wins and why? ",
+    "How do the forced bets (small blind and big blind) influence player strategy and decision-making before the flop?",
+    "Two players both have a Full House at showdown. What steps would you take to determine who wins the pot? Can you think of a situation where both players would split the pot?",
+    "Give an example of a hand that consists of a straight flush.",
+    "You have a 7 of clubs and a 9 of hearts. After the river, the board reads 6-4-8-7-10. What hand do you have?",
+    "What is the difference between a flush and a straight flush?",
+    "You have the following hole cards: 10 and J of Spades\nThe community cards after the turn are:♠️ Q of spades, K of Spades, 3 of Diamonds, 5 of Spades\nWhat card do you hope to see on the river to complete the strongest possible hand? Explain why."
+    ]
+    print(f"You are crushing this lesson!")
+    t.sleep(2)
+    print(f"I am going to give you a few questions to test your understanding of the lesson.    ")
+    t.sleep(2)
+    print(f"You can answer these questions in your own words")
+    t.sleep(2)
+    input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
+    for question in questions:
+        ante.gaveQuestion(question)
+        input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
 
 # lesson 1: 扑克牌的基本知识
 def start(user_name):
@@ -349,12 +374,8 @@ def start(user_name):
     t.sleep(2)
     structure_of_texas_hold_em(user_name)
     game_flow_questions(user_name)
-    print(f"{LIGHT_GREEN}Great job! Now, let's move on to the next lesson.{RESET}")
-
-
-
-
-
+    postLessonActivity(user_name)
+    input(f"{LIGHT_GREEN}Great job! {LIGHT_BLUE} Press Enter to return to the main menu{RESET}")
 
 
 if __name__ == "__main__":
