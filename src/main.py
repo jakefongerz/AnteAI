@@ -2,7 +2,9 @@ import lesson1
 from art import * #https://pypi.org/project/art/
 import time as t
 import sys
-
+import cards
+import practice
+from sideKick import sideKick
 #  ANSI color codes
 BLACK = "\033[0;30m"
 RED = "\033[0;31m"
@@ -28,6 +30,7 @@ BLINK = "\033[5m"
 NEGATIVE = "\033[7m"
 CROSSED = "\033[9m"
 RESET = "\033[0m"
+
 
 
 def main():
@@ -57,24 +60,30 @@ def menu(user_data):
     while True:
         print(f"""\t  {YELLOW}1: Poker Basics & Rules{RESET}
           2: Starting Hand Selection
-          {CYAN}3: Positional Awareness & Betting Rounds{RESET}
-          4: The Power of Bluffing & Deception
-          {LIGHT_BLUE}5: Pot Odds & Equity{RESET}
-          6: Continuation Betting & Aggressive Play
-          {LIGHT_GRAY}7: Reading Opponents & Adjusting Strategy{RESET}
-          8: Advanced Postflop Play
-          {PURPLE}9: Bankroll Management & Mindset{RESET}
-          10: Tournament vs. Cash Game Strategy
+          {LIGHT_GRAY}3: The Power of Bluffing & Deception
+          {LIGHT_BLUE}4: Pot Odds & Equity{RESET}
+          5: Reading Opponents & Adjusting Strategy
+          {PURPLE}p: practice{RESET}
+          {GREEN}sk: ANTEAI sidekick{RESET}
           {RED}q: Quit{RESET}
           """)
-        choice = input(f"{BROWN}\nEnter a number 1-10 or {RED}q {BROWN}to quit{RESET}: ").lower()
+        choice = input(f"{BROWN}\nEnter a number 1-5 or {RED}q {BROWN}to quit{RESET}: ").lower()
         if choice.lower() == "q":
-            print(f"{CYAN}Thanks for using AnteAI!{RESET}")
-            t.sleep(1)
-            sys.exit()
+            print(f"{CYAN}Thanks for using AnteAI!{RESET} ",end="",flush=True)
+            t.sleep(.5)
+            for i in range(3):
+                if i == 0:
+                    print(f"{RED} Quitting", end="", flush=True)
+                print(".", end="", flush=True)
+                t.sleep(.5)
+            sys.exit(0)
+        elif choice == "p":
+            practice.main(user_data)
+        elif choice == "sk" or choice == "sidekick":
+            sideKick(user_data["name"])
         elif choice == "1":
             tprint("LESSON 1")
-            lesson1.start(user_data.get("name"))
+            user_data = lesson1.start(user_data)
         elif choice == "2":
             tprint("LESSON 2")
             print("Lesson 2")
@@ -87,23 +96,10 @@ def menu(user_data):
         elif choice == "5":
             tprint("LESSON 5")
             print("Lesson 5")
-        elif choice == "6":
-            tprint("LESSON 6")
-            print("Lesson 6")
-        elif choice == "7":
-            tprint("LESSON 7")
-            print("Lesson 7")
-        elif choice == "8":
-            tprint("LESSON 8")
-            print("Lesson 8")
-        elif choice == "9":
-            tprint("LESSON 9")
-            print("Lesson 9")
-        elif choice == "10":
-            tprint("LESSON 10")
-            print("Lesson 10")
         else:
             print(f"{YELLOW}OOPS!{RESET} That's not a valid option.")
+            card = cards.Card("2", "♦")
+            print(card)
 
 
 

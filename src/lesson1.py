@@ -165,7 +165,7 @@ def hand_rankings(user_name):
     t.sleep(2)
     
     user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET}) ").lower()
-    if user_input == "y":
+    if user_input.contains("y"):
         print("Awesome! Now, let's dive into how betting works.")
     else:
         question = input(f"{LIGHT_BLUE}No problem! What are you confused about?{RESET} ")
@@ -344,7 +344,7 @@ def postLessonActivity(user_name):
 
 # lesson 1: 扑克牌的基本知识
 def start(user_data):
-    user_name = user_data["name"]
+    user_name = user_data.get("name")
     print(f"{YELLOW}"+"="*50)
     t.sleep(1)
     print(f"{GREEN}Hey {user_name}! In this lesson, we will learn the basic knowledge of poker.")
@@ -377,6 +377,8 @@ def start(user_data):
     game_flow_questions(user_name)
     postLessonActivity(user_name)
     input(f"{LIGHT_GREEN}Great job! {LIGHT_BLUE} Press Enter to return to the main menu{RESET}")
+    user_data["lesson1"] = True
+    return user_data
 
 
 if __name__ == "__main__":
