@@ -58,15 +58,19 @@ def main():
 def menu(user_data):
     print(f"Choose a lesson to start with... {RESET}")
     t.sleep(1)
+    
+    color1 = GREEN
+    color2 = GREEN
+    color3 = GREEN
     while True:
-        print(f"""\t  {YELLOW}1: Poker Basics & Rules{RESET}
-          2: Starting Hand Selection
-          {LIGHT_BLUE}3: Pot Odds & Equity{RESET}
+        print(f"""\t  {color1}1: Poker Basics & Rules{RESET}
+          {color2}2: Starting Hand Selection
+          {color3}3: Pot Odds & Equity{RESET}
           {PURPLE}p: practice{RESET}
           {GREEN}sk: ANTEAI sidekick{RESET}
           {RED}q: Quit{RESET}
           """)
-        choice = input(f"{BROWN}\nSelect an option (ex: {RED}q{BROWN}, {GREEN}sk{BROWN}, {PURPLE}p{BROWN}, {BLUE}1{BROWN}-{PURPLE}3{BROWN}){RESET}: ").lower()
+        choice = input(f"{BROWN}Select an option (ex: {BLUE}1{BROWN}-{PURPLE}3{BROWN}){RESET}, {RED}q{BROWN}, {GREEN}sk{BROWN}, {PURPLE}p{BROWN}: ").lower()
         if choice.lower() == "q":
             print(f"{CYAN}Thanks for using AnteAI!{RESET} ",end="",flush=True)
             t.sleep(.5)
@@ -89,14 +93,16 @@ def menu(user_data):
         elif choice == "3":
             tprint("LESSON 3")
             user_data = lesson3.start(user_data)
-        elif choice == "4":
-            tprint("LESSON 4")
-            print("Lesson 4")
-        elif choice == "5":
-            tprint("LESSON 5")
-            print("Lesson 5")
         else:
-            print(f"{YELLOW}OOPS!{RESET} That's not a valid option.")
+            print(f"{RED}OOPS!{RESET} That's not a valid option.")
+            t.sleep(2)
+        if user_data["lesson1"] == True:
+            color1 = GREEN
+        if user_data["lesson2"] == True:
+            color2 = GREEN
+        if user_data["lesson3"] == True:
+            color3 = GREEN
+            
 
 if __name__ == "__main__":
     main()

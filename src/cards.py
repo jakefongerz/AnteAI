@@ -24,6 +24,8 @@ CROSSED = "\033[9m"
 RESET = "\033[0m"
 
 def get_card(rank, suit):
+    if rank == "10":
+        rank = "T"
     if suit == "♥" or suit == "♦":
         rank = f"{RED}{rank} {RESET}"
         suit = f"{RED}{suit}{RESET}"
@@ -39,6 +41,10 @@ def get_card(rank, suit):
     return card
 
 def get_hole_cards(rank1, suit1, rank2, suit2):
+    if rank1 == "10":
+        rank1 = "T"
+    if rank2 == "10":
+        rank2 = "T"
     if suit1 == "♥" or suit1 == "♦":
         rank1 = f"{RED}{rank1} {RESET}"
         suit1 = f"{RED}{suit1}{RESET}"
@@ -57,7 +63,16 @@ def get_hole_cards(rank1, suit1, rank2, suit2):
     return cards
 
 def get_cards_on_table(cards):
-    # cards is a list of lists, each inner list contains a rank and a suit
+    if cards[0][1] == "10":
+        cards[0][1] = "T"
+    if cards[1][1] == "10":
+        cards[1][1] = "T"
+    if cards[2][1] == "10":
+        cards[2][1] = "T"
+    if cards[3][1] == "10":
+        cards[3][1] = "T"
+    if cards[4][1] == "10":
+        cards[4][1] = "T" 
     if cards[0][1] == "♥" or cards[0][1] == "♦":
         cards[0][0] = f"{RED}{cards[0][0]} {RESET}"
         cards[0][1] = f"{RED}{cards[0][1]}{RESET}"
@@ -88,6 +103,4 @@ def get_cards_on_table(cards):
 ranks = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2']
 suits = ['♠', '♣', '♥', '♦']
 cards = [get_card(rank, suit) for rank, suit in zip(ranks, suits)]
-#print(get_card("2", "♦"))
-##print(get_hole_cards("2", "♦", "3", "♣"))
-#print(get_cards_on_table([["5", "♦"], ["3", "♣"], ["4", "♥"], ["5", "♠"], ["6", "♣"]]))
+

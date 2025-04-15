@@ -45,7 +45,6 @@ def postLessonActivity(user_name):
 def implied_odds():
     print(f"\n{LIGHT_BLUE}Now that you understand {BOLD}pot odds{RESET}{LIGHT_BLUE}, let's introduce a related concept: {BOLD}implied odds.{RESET}")
     t.sleep(2)
-
     print("Implied odds are like pot odds, but with one important difference.")
     t.sleep(2)
     print(f"{YELLOW}They take into account the chips you expect to win {BOLD}after{RESET}{YELLOW} this round if you hit your draw.{RESET}")
@@ -64,7 +63,14 @@ def implied_odds():
     t.sleep(2)
     print(f"{LIGHT_PURPLE}This concept helps you justify calls on draws that aren’t quite profitable using pot odds alone—but {BOLD}only{RESET}{LIGHT_PURPLE} if you’re confident you’ll get paid when you hit.{RESET}")
     t.sleep(3)
-    input(f"{LIGHT_BLUE}Press Enter to continue...")
+    user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET})").lower()
+    t.sleep(1)
+    if user_input == "y":
+        print("Great, let us continue!")
+    else:
+        question = input(f"{LIGHT_BLUE}No Worries, what are you confused about?{RESET} ")
+        ante.askQuestion([f"User is confused about pot odds and asks you the following question: {question}"])
+        input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     #questions
     ask_mc_question(
     question="The pot is $40 and your opponent bets $10. You have a flush draw with one card to come. You believe if you hit your flush, you’ll win another $30 on the river. What are your implied pot odds?",
@@ -170,7 +176,14 @@ def using_pot_odds():
     print(f"\n{CYAN}Pot odds are one part of a larger strategy that uses game theory{RESET}.")
     print("They help you make decisions based on math instead of guessing your opponent’s mood.")
     t.sleep(3)
-    input(f"{LIGHT_BLUE}Press Enter to continue...")
+    user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET})").lower()
+    t.sleep(1)
+    if user_input == "y":
+        print("Great, let us continue!")
+    else:
+        question = input(f"{LIGHT_BLUE}No Worries, what are you confused about?{RESET} ")
+        ante.askQuestion([f"User is confused about pot odds and asks you the following question: {question}"])
+        input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # Questions
     print(f"{CYAN}Let's test your understanding with a few questions:{RESET}")
     t.sleep(2)
@@ -260,11 +273,14 @@ def intro_pot_odds():
     print(f"\n{LIGHT_GREEN}That’s it! Pot odds show you how often your hand needs to win to break even.{RESET}")
     t.sleep(2)
 
-    user_input = input(f"{LIGHT_BLUE}Would you like to try an example on your own? ({GREEN}y{RESET}/{RED}n{RESET}) ").lower()
+    user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET})").lower()
+    t.sleep(1)
     if user_input == "y":
-        print("Awesome! Let's go over a few practice scenarios next.")
+        print("Great, let us continue!")
     else:
-        print("No worries! We’ll keep moving forward when you’re ready.")
+        question = input(f"{LIGHT_BLUE}No Worries, what are you confused about?{RESET} ")
+        ante.askQuestion([f"User is confused about pot odds and asks you the following question: {question}"])
+        input(f"{LIGHT_BLUE}Press Enter to continue...{RESET}")
     # QUESTIONS
     ask_mc_question(
     question="The pot is $150. Your opponent bets $50. What percentage equity do you need to call profitably?",

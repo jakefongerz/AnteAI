@@ -65,7 +65,7 @@ scenerios = {
         On the flop, {PURPLE}BU{RESET} continuation bet about half the pot.''',
         "question": f" {BOLD}You have the nut flush draw and overcard. Do you call, raise to apply pressure, or fold if you think {PURPLE}BU{RESET} has a strong made hand? {GREEN}(explain your reasoning){RESET}"  
 },     
-    "3": {
+    "9": {
         "user_position": "MP2",
         "user_cards": [["Q", "♣"], ["5", "♥"]],
         "pot": 48,
@@ -95,9 +95,50 @@ scenerios = {
     You checked, {PURPLE}BB{RESET} bet small, {PURPLE}UTG{RESET} called, and {PURPLE}CO{RESET} folded. 
     Action is back on you.''',
         "question": f"{BOLD}You hit top pair with a decent kicker. Do you raise to isolate, call to control the pot, or fold if you fear slow-played monsters? {GREEN}(explain your reasoning){RESET}"
+    },
+    "6": {
+        "user_position": "MP2",
+        "user_cards": [["7", "♥"], ["6", "♥"]],
+        "pot": 80,
+        "cards_on_table": [["A", "♣"], ["9", "♥"], ["2", "♥"], ["K", "♦"], [" ", " "]],
+        "description": f'''{PURPLE}UTG{RESET} raised preflop and has been aggressive on both the flop and turn. 
+        They just bet $40 into a pot of $80. 
+        You have a flush draw with one card to come. {PURPLE}UTG{RESET} is a tight player who rarely bluffs.''',
+        "question": f"{BOLD}Based on pot odds, is it profitable to call? How might implied odds or their tight image affect your decision? {GREEN}(explain your reasoning){RESET}"
+    },
+        "7": {
+        "user_position": "CO",
+        "user_cards": [["5", "♣"], ["4", "♣"]],
+        "pot": 60,
+        "cards_on_table": [["K", "♣"], ["Q", "♠"], ["7", "♣"], ["2", "♦"], [" ", " "]],
+        "description": "BTN raised preflop and has been playing aggressively. On the turn, they bet $20 into the $60 pot. They often barrel river bets. You have a flush draw and position.",
+        "question": "What are your pot odds here, and how do implied odds make calling more or less attractive?"
+    },
+    "8": {
+        "user_position": "BU",
+        "user_cards": [["A", "♦"], ["9", "♠"]],
+        "pot": 72,
+        "cards_on_table": [["6", "♣"], ["7", "♦"], ["3", "♥"], ["Q", "♠"], [" ", " "]],
+        "description": f'''{PURPLE}CO{RESET} raised preflop and c-bet the flop. 
+        You called on the button with just ace-high, hoping to pick up the pot later. 
+        On the turn, {PURPLE}CO{RESET} checks to you. 
+        They tend to slow down without strong holdings. 
+        Everyone else has folded.''',
+        "question": f"{BOLD}Should you check behind and take a free river, or bluff to represent a queen? How does your position and their check influence your move? {GREEN}(explain your reasoning){RESET}"
+    },
+    "3": {
+        "user_position": "MP1",
+        "user_cards": [["8", "♦"], ["8", "♣"]],
+        "pot": 100,
+        "cards_on_table": [["J", "♠"], ["9", "♣"], ["7", "♣"], [" ", " "], [" ", " "]],
+        "description": f'''{PURPLE}UTG{RESET} player raised preflop and you called with a pocket pair. 
+        On the flop, {PURPLE}UTG{RESET} bets $30 into the $100 pot. 
+        The board is highly connected and draws are possible. 
+        {PURPLE}UTG{RESET} is known to continuation bet with both made hands and overcards.''',
+        "question": f"{BOLD}You have middle pair on a dangerous board. Do you call, raise to protect, or fold? How do pot odds and board texture guide your thinking? {GREEN}(explain your reasoning){RESET}"
     }
-
 }
+
 
 
 def run_scenerio(scenerio):
