@@ -88,6 +88,6 @@ def get_cards_on_table(cards):
 ranks = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2']
 suits = ['♠', '♣', '♥', '♦']
 cards = [get_card(rank, suit) for rank, suit in zip(ranks, suits)]
-print(get_card("2", "♦"))
-print(get_hole_cards("2", "♦", "3", "♣"))
-print(get_cards_on_table([["5", "♦"], ["3", "♣"], ["4", "♥"], ["5", "♠"], ["6", "♣"]]))
+#print(get_card("2", "♦"))
+##print(get_hole_cards("2", "♦", "3", "♣"))
+#print(get_cards_on_table([["5", "♦"], ["3", "♣"], ["4", "♥"], ["5", "♠"], ["6", "♣"]]))

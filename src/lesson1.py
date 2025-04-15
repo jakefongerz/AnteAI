@@ -165,7 +165,7 @@ def hand_rankings(user_name):
     t.sleep(2)
     
     user_input = input(f"{LIGHT_BLUE}Does that make sense? ({GREEN}y{RESET}/{RED}n{RESET}) ").lower()
-    if user_input.contains("y"):
+    if user_input == "y" or user_input == "yes":
         print("Awesome! Now, let's dive into how betting works.")
     else:
         question = input(f"{LIGHT_BLUE}No problem! What are you confused about?{RESET} ")

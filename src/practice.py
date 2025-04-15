@@ -43,7 +43,7 @@ poker_table = f"""
 
 # ['♠', '♣', '♥', '♦']
 scenerios = {
-    "1": {
+    "2": {
         "user_position": "UTG1",
         "user_cards": [["J", "♦"], [ "5", "♠"]],
         "pot": 20,
@@ -55,7 +55,7 @@ scenerios = {
         Action has been cautious, and you are first to act from {PURPLE}UTG1{RESET}.''',
         "question": f" {BOLD}What should you do next? What should you watch out for? {GREEN}(explain your reasoning){RESET}"
     },
-    "2": {
+    "1": {
         "user_position": "CO",
         "user_cards": [["A", "♠"], ["9", "♠"]],
         "pot": 36,

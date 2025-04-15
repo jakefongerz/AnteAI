@@ -26,7 +26,7 @@ def askQuestion(question):
     )
     slow_print(completion.choices[0].message.content)
     print(" ")
-    print("="*50)
+    print("="*75)
 
 def gaveQuestion(question):
     student_response = input(question)
@@ -56,4 +56,4 @@ def gaveQuestion(question):
 
     slow_print(completion.choices[0].message.content)
     print(" ")
-    print("="*50)
+    print("="*75)

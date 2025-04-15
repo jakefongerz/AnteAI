@@ -1,10 +1,12 @@
 import lesson1
+import lesson2
+import lesson3
 from art import * #https://pypi.org/project/art/
 import time as t
 import sys
-import cards
 import practice
 from sideKick import sideKick
+
 #  ANSI color codes
 BLACK = "\033[0;30m"
 RED = "\033[0;31m"
@@ -35,7 +37,7 @@ RESET = "\033[0m"
 
 def main():
     tprint("ANTE AI")
-    print("-"*50)
+    print("-"*75)
     t.sleep(.5)
     print(f"{YELLOW}Hey there!{RESET}")
     t.sleep(.75)
@@ -50,8 +52,7 @@ def main():
         print(f"Nice to meet you {user_name}! ")
         t.sleep(1)
         print(f"Let's get started!")
-    user_data = {"name": user_name, "lesson1": False, "lesson2": False, "lesson3": False, "lesson4": False, "lesson5": False, "lesson6": False, "lesson7": False, "lesson8": False, "lesson9": False, "lesson10": False}
-    t.sleep(1)
+    user_data = {"name": user_name, "lesson1": False, "lesson2": False, "lesson3": False}
     menu(user_data)
 
 def menu(user_data):
@@ -60,14 +61,12 @@ def menu(user_data):
     while True:
         print(f"""\t  {YELLOW}1: Poker Basics & Rules{RESET}
           2: Starting Hand Selection
-          {LIGHT_GRAY}3: The Power of Bluffing & Deception
-          {LIGHT_BLUE}4: Pot Odds & Equity{RESET}
-          5: Reading Opponents & Adjusting Strategy
+          {LIGHT_BLUE}3: Pot Odds & Equity{RESET}
           {PURPLE}p: practice{RESET}
           {GREEN}sk: ANTEAI sidekick{RESET}
           {RED}q: Quit{RESET}
           """)
-        choice = input(f"{BROWN}\nEnter a number 1-5 or {RED}q {BROWN}to quit{RESET}: ").lower()
+        choice = input(f"{BROWN}\nSelect an option (ex: {RED}q{BROWN}, {GREEN}sk{BROWN}, {PURPLE}p{BROWN}, {BLUE}1{BROWN}-{PURPLE}3{BROWN}){RESET}: ").lower()
         if choice.lower() == "q":
             print(f"{CYAN}Thanks for using AnteAI!{RESET} ",end="",flush=True)
             t.sleep(.5)
@@ -86,10 +85,10 @@ def menu(user_data):
             user_data = lesson1.start(user_data)
         elif choice == "2":
             tprint("LESSON 2")
-            print("Lesson 2")
+            user_data = lesson2.start(user_data)
         elif choice == "3":
             tprint("LESSON 3")
-            print("Lesson 3")
+            user_data = lesson3.start(user_data)
         elif choice == "4":
             tprint("LESSON 4")
             print("Lesson 4")
@@ -98,10 +97,6 @@ def menu(user_data):
             print("Lesson 5")
         else:
             print(f"{YELLOW}OOPS!{RESET} That's not a valid option.")
-            card = cards.Card("2", "♦")
-            print(card)
-
-
 
 if __name__ == "__main__":
     main()
