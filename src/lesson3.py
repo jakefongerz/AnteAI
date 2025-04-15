@@ -1,7 +1,6 @@
 import time as t
 import ante
 # Resource:
-# info for this lesson if from:
 # https://upswingpoker.com/pot-odds-step-by-step/
 
 # ANSI color codes

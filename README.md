@@ -1,6 +1,6 @@
 # AnteAI
 ## Running the program
-* Install the dependencies: `pip install dotenv` and `pip install openai`
+* Install the dependencies: `pip install dotenv`, `pip install openai`, and `pip install art`
 * Create a `.env` file in the root directory
     * Add your OpenAI API key: `OPENAI_API_KEY="<your_openai_api_key>"`
 * Run the program: `python src/main.py`
