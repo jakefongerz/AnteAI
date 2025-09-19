@@ -31,3 +31,6 @@
 
 ### Sidekick:
 * Environment for users to ask questions to AnteAI
+
+## Final Report
+* For more information, please read the [Final Report](https://docs.google.com/document/d/1vogF263ycW7dgcbTwC-bFDylmtDQvNID8zcQ-fXkb18/edit?usp=sharing)
